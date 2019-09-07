@@ -1,18 +1,22 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
-</ion-header>
-
-<ion-content padding>
+    <ion-navbar>
+      <ion-title>
+        Contatos
+      </ion-title>
   
-  <p>
-    Aprendendo sobre um novo app.
-  </p>
-
-  <li *ngFor = "let c of contacts">
-    {{c.name}}: {{c.phone}} - {{c.email}} 
-  </li>
-</ion-content>
+      <ion-buttons end>
+        <button ion-button icon-only (click)="goToCreatePage()">
+          <ion-icon name="add"></ion-icon>
+        </button>
+      </ion-buttons>
+  
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+    <ion-list>
+      <button ion-item *ngFor="let c of contacts" (click)="goToEditPage(c.id)">
+        {{c.name}}
+      </button>
+    </ion-list>
+  </ion-content>

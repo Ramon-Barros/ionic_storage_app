@@ -10,10 +10,16 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { StorageProvider } from '../providers/storage/storage';
 
+import { EditPage } from '../pages/edit/edit';
+import { CreatePage } from '../pages/create/create';
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    EditPage,
+    CreatePage
   ],
   imports: [
     BrowserModule,
@@ -21,12 +27,15 @@ import { StorageProvider } from '../providers/storage/storage';
     IonicStorageModule.forRoot({
       name: '__mydb',
       storeName: 'contacts'
-    })    
+    }),
+    FormsModule    
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    EditPage,
+    CreatePage
   ],
   providers: [
     StatusBar,

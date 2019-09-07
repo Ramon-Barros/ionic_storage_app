@@ -39,4 +39,10 @@ export class StorageProvider {
     return this.storage.get(key);
   }
 
+  update(key, value: Contact) {
+
+    this.set(key, value);
+
+  }
+
 }
