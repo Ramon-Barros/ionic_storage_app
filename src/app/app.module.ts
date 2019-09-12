@@ -7,12 +7,15 @@ import { StatusBar } from '@ionic-native/status-bar';
 import {IonicStorageModule} from '@ionic/storage';
 
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
-import { StorageProvider } from '../providers/storage/storage';
 
+import { StorageProvider } from '../providers/storage/storage';
+import { ToastProvider } from '../providers/toast/toast';
+
+import { HomePage } from '../pages/home/home';
 import { EditPage } from '../pages/edit/edit';
 import { CreatePage } from '../pages/create/create';
 import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -41,7 +44,8 @@ import { FormsModule } from '@angular/forms';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    StorageProvider
+    StorageProvider,
+    ToastProvider
   ]
 })
 export class AppModule {}
